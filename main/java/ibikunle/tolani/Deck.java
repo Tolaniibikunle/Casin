@@ -8,6 +8,10 @@ import java.util.Collections;
  * Created by tolaniibikunle on 1/27/17.
  */
 public class Deck {
+    public ArrayList<Card> getCards() { //this getter is referencing the cards arraylist of this instance
+        return cards;
+    }
+
     ArrayList<Card> cards = new ArrayList<Card>();
 
 
@@ -22,8 +26,10 @@ public class Deck {
 
     }
     public Card deal(){ // returning a card
-        Card c = cards.get(0); // this object c chooses a deck;
+        Card c = getCards().get(0); // this object c chooses a deck;
         cards.remove(0);   //this method removes one card from the ArrayList
+        cards.trimToSize(); // this now shrinks the arrayList size
+        System.out.println(getCards().size());
         return c; // this now returns a card and the deck now has 51 cards.
     }
     public void shuffle(){

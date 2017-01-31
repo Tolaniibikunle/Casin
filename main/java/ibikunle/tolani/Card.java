@@ -19,11 +19,11 @@ public class Card {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false; // if the ranks are the same they are equal
 
         Card card = (Card) o;
 
-        if (suit != card.suit) return false;
+        if (suit != card.suit) return false; //compares the ranks of the cards
         return rank == card.rank;
     }
 

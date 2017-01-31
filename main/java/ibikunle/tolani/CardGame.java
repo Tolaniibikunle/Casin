@@ -5,8 +5,7 @@ package ibikunle.tolani;
  */
 public abstract class CardGame {
     Deck deck = new Deck();
-
-    //dealer
-    //players
+    Player player = new Player("player");
+    Player dealer = new Player("dealer");
 
 }

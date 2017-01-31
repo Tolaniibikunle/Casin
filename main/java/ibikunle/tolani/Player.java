@@ -5,13 +5,14 @@ package ibikunle.tolani;
  */
 public class Player {
     String playerName;
-    double money;
-    public Player(String playerName,double money){
+
+    public Player(String playerName){
         this.playerName = playerName;
-        this.money = money;
 
     }
 
-
+    public String getPlayerName() {
+        return playerName;
     }
+}
 

@@ -21,7 +21,7 @@ public class Casino {
         String gameToPlay = in.nextLine();
         if(gameToPlay.equals("BlackJack")){
 
-        } else if(gameToPlay.equals("GoFish or Gofish or gofish")){
+        } else if(gameToPlay.toLowerCase().equals("gofish")){
             gofish.startGame();
         }
     }

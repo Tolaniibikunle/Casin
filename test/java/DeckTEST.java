@@ -12,9 +12,11 @@ import static org.junit.Assert.assertEquals;
 public class DeckTEST {
     Deck deck;
     Card card;
-    GoFish goFish;
+    GoFish goFish; //declarations
     ArrayList<Card> testHand;
-
+    Player player;
+    Player dealer;
+    BlackJack blackJack;
 
     @Before
     public void setUp() {
@@ -24,9 +26,12 @@ public class DeckTEST {
         testHand = new ArrayList<Card>();
         testHand.add(new Card(Suit.SPADES, Rank.TWO));
         testHand.add(new Card(Suit.HEARTS, Rank.TWO));
-        testHand.add(new Card(Suit.CLUBS, Rank.THREE));
-        testHand.add(new Card(Suit.DIAMONDS, Rank.TWO));
+        testHand.add(new Card(Suit.DIAMONDS, Rank.TWO));// instances
         testHand.add(new Card(Suit.HEARTS, Rank.ACE));
+        testHand.add(new Card(Suit.CLUBS,Rank.TWO));
+        player = new Player("player");
+        dealer = new Player("dealer");
+        blackJack = new BlackJack();
 
 
     }
@@ -47,7 +52,7 @@ public class DeckTEST {
 
     @Test
     public void dealingInitialCardsToDealerTest() {
-        goFish.initialDealOfSevenCards("dealer"); // to make sure that you could pass in the dealers name and they would receive the right amount of cards
+        goFish.initialDealOfSevenCards(dealer); // to make sure that you could pass in the dealers name and they would receive the right amount of cards
         int expected = 7;
         int actual = goFish.dealerHand.size();// go into go go fish object, go into playerhand, then get size .. file directory
         assertEquals("I am expecting 7 cards", expected, actual);
@@ -55,17 +60,17 @@ public class DeckTEST {
 
     @Test
     public void dealingInitialCardsToPlayerTest() {  // we tested these to makes sure that you could pass in a player name as well
-        goFish.initialDealOfSevenCards("player");
+        goFish.initialDealOfSevenCards(player);
         int expected = 7;
         int actual = goFish.playerHand.size();// go into go go fish object, go into playerhand, then get size .. file directory
         assertEquals("I am expecting 7 cards", expected, actual);
     }
 
     @Test
-    public void getMostFrequentRankInHandTest() {
-        Rank expected = Rank.TWO;
-        Rank actual = goFish.getMostFrequentRankInHand(testHand);
-        assertEquals("I am expecting a TWO", expected, actual);
+    public void getRequestRankTest() {
+        Rank expected = Rank.ACE;
+        Rank actual = goFish.getRequestRank(testHand);
+        assertEquals("I am expecting a ACE", expected, actual);
     }
 
     @Test
@@ -76,6 +81,14 @@ public class DeckTEST {
 
 
     }
+
+    @Test
+    public void creatingDeckTest() {
+        int expeted = 52;
+        int actual = deck.getCards().size();
+        assertEquals("I am expecting 52 cards in deck ", expeted, actual);
+    }
+
 
     @Test
     public void checkIfCardIsInHandExpectingFalseTest() {
@@ -118,7 +131,7 @@ public class DeckTEST {
         goFish.dealCardToDealer();
         Card expected = new Card(Suit.SPADES,Rank.TWO);
         Card actual = goFish.dealerHand.get(0);
-        assertEquals("I am expecting a FOUR",expected,actual);
+        assertEquals("I am expecting a TWO",expected,actual);
     }
 
     @Test
@@ -128,4 +141,76 @@ public class DeckTEST {
         Card actual = goFish.playerHand.get(0);
         assertEquals("I am expecting a TWO",expected,actual);
     }
+    @Test
+    public void checkDeckAfterDealTest(){
+        goFish.initialDealOfSevenCards(dealer);
+       int  expected = 45;
+       int actual = deck.getCards().size();
+       assertEquals(" I am expecting 45",expected,actual);
+    }
+    @Test
+    public void getNumberOfBooksTest() {
+        int expected = 1;
+        int actual = goFish.getNumberOfBooks(testHand);
+        assertEquals("I am expecting 1", expected, actual);
+
+    }
+    @Test
+    public void numberOfCardsOfRankTest(){
+        int expected = 4;
+        int acutal = goFish.numberOfCardsOfRank(testHand,Rank.TWO);
+        assertEquals("I am expecting four",expected,acutal);
+    }
+    @Test
+    public void dealTwoCardsToDealerTest(){
+        blackJack.dealTwoCards();
+        int expected = 2;
+        int actual = blackJack.getDealerHand().size();
+        assertEquals("I am expecting two",expected,actual);
+    }
+    @Test
+    public void dealerTwoCardsToPlayerTest(){
+        blackJack.dealTwoCards();
+        int expected = 2;
+        int actual = blackJack.getPlayerHand().size();
+        assertEquals("I am expecting two",expected,actual);
+    }
+    @Test
+    public void convertCardToValueTest(){
+      int expected = 10;
+      int actutal = blackJack.convertCardToValue(new Card(Suit.CLUBS,Rank.KING)) ;
+      assertEquals("I am expecting a 10",expected,actutal);
+    }
+    @Test
+    public void getValueOfHandTest(){
+        int expected = 19;
+        int actual =blackJack.getValueOfHand(testHand);
+        assertEquals("I am expecting 19",expected,actual);
+    }
+    @Test
+    public void checkIfBustTest(){
+        testHand.add(new Card(Suit.SPADES,Rank.KING));
+        boolean expected = true;
+        boolean actual = blackJack.checkIfBust(testHand);
+        assertEquals("I am expecting true",expected,actual);
+
+    }
+    @Test
+    public void compareValues(){
+        ArrayList<Card> playerHand = new ArrayList<Card>();
+        playerHand.add(new Card(Suit.SPADES,Rank.EIGHT));
+        playerHand.add(new Card(Suit.HEARTS,Rank.JACK));
+        int expected = 1;
+        int actual = blackJack.compareValues(testHand,playerHand);
+        assertEquals("I am expecting one",expected,actual);
+    }
+    @Test
+    public void hitTest(){
+        blackJack.hit(testHand);
+        int expected =6;
+        int actual = testHand.size();
+        assertEquals("I am expected 6",expected,actual);
+
+    }
 }
+

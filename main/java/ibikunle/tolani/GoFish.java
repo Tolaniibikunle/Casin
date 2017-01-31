@@ -9,12 +9,13 @@ import java.util.*;
 public class GoFish extends CardGame {
     public ArrayList<Card> dealerHand = new ArrayList<Card>(); //created new arraylists for the dealers hands
     public ArrayList<Card> playerHand = new ArrayList<Card>(); //created new arraylist for the players hands
+    Deck deck = new Deck();
 
 
     public void startGame() {
-        initialDealOfSevenCards("dealer");
-        initialDealOfSevenCards("player");
-        while (deck.cards.size() > 0) {
+        initialDealOfSevenCards(dealer); // we are passing the object dealer through the method initialDealOfSeven cards and dealing seven cards
+        initialDealOfSevenCards(player);// we are passing the object dealer through the method initialDealOfSeven cards and dealing seven cards
+        while (deck.getCards().size() > 0) {
             dealersTurn();
             playersTurn();
 
@@ -34,7 +35,7 @@ public class GoFish extends CardGame {
     }
 
     public void dealersTurn() {
-        Rank mostFrequentRankInDealersHand = getMostFrequentRankInHand(dealerHand);
+        Rank mostFrequentRankInDealersHand = getRequestRank(dealerHand);
         boolean isCardInDealerHand = checkIfCardIsInHand(playerHand, mostFrequentRankInDealersHand);
         if (isCardInDealerHand) {
             transferCard("player", mostFrequentRankInDealersHand);
@@ -44,7 +45,7 @@ public class GoFish extends CardGame {
     }
 
     public void playersTurn() {
-        Rank mostFrequentRankInPlayersHand = getMostFrequentRankInHand(playerHand);
+        Rank mostFrequentRankInPlayersHand = getRequestRank(playerHand);
         boolean isCardInPlayerHand = checkIfCardIsInHand(dealerHand, mostFrequentRankInPlayersHand);
         if (isCardInPlayerHand) {
             transferCard("dealer", mostFrequentRankInPlayersHand);
@@ -53,56 +54,52 @@ public class GoFish extends CardGame {
         }
     }
 
-    public void initialDealOfSevenCards(String player) { // this method is dealing the initial seven cards
-        if (player.equals("dealer")) {
+    public void initialDealOfSevenCards(Player player) { // this method is dealing the initial seven cards
+        if (player.getPlayerName().equals("dealer")) {
             for (int i = 0; i < 7; i++) { // this is dealing out seven cards
                 dealerHand.add(deck.deal());
             }
-        } else if (player.equals("player")) {
+        } else if (player.getPlayerName().equals("player")) {
             for (int i = 0; i < 7; i++) { // this is dealing out seven cards
                 playerHand.add(deck.deal());
             }
 
         }
-        // Collections.frequency(// this is to check the occurencess of a certain card
     }
 
-    public Rank getMostFrequentRankInHand(ArrayList<Card> hand) { // how to count what kinds of cards they have
-        int max = 0;
-        Rank mostFrequentRank = null;
-        int counter = 0;
-
-        Collections.sort(hand, new Comparator<Card>() {
-            public int compare(Card o1, Card o2) {  // this method will sort cards in order by rank.
-                return o1.getRank().compareTo(o2.getRank());
-            }
-        });
-
-        for (int i = 0; i < hand.size(); i++) {
-            if (i == 0) {
-                counter = 1;
-                mostFrequentRank = hand.get(i).getRank(); // so this just adds to the number of frequencies within that same rank of card
-            } else if (hand.get(i) == hand.get(i - 1)) {
-                counter++;
-            } else if (hand.get(i) != hand.get(i - 1)) {
-                if (counter > max) {
-                    max = counter;
-                    mostFrequentRank = hand.get(i).getRank();
-                }
-            }
+    public Rank getRequestRank(ArrayList<Card> hand) { // how to count what kinds of cards they have
+//
+        ArrayList<Rank> ranks = new ArrayList<Rank>(); // every piece of this list is rank
+        for (Card c: hand) //for every card in the hand , get the rank of the first hand
+              { Rank r = c.getRank();
+                  if(numberOfCardsOfRank(hand,r)<4){
+                    ranks.add(r);
+              }
 
         }
-        return mostFrequentRank;
+        int index =(int) Math.floor(Math.random()*ranks.size()); // generating a random between 0 and the length the hand.
+        return ranks.get(index) ;
     }
+
 
     public boolean checkIfCardIsInHand(ArrayList<Card> hand, Rank lookingFor) {
         for (int i = 0; i < hand.size(); i++) {                 // this method checks to see if the card we are looking for is in the hand of the of the opposite player.
-            if (lookingFor == hand.get(i).getRank())
+            if (lookingFor == hand.get(i).getRank()) //this is the hand you have now you are going inside of hand that you have to get the rank.
                 return true;
         }
         return false;
     }
 
+    public int numberOfCardsOfRank(ArrayList<Card> hand, Rank rank){ // checking to see if the number of cards of each rank.
+            int counter = 0;
+        for (int i = 0; i <hand.size(); i++) {
+            if(hand.get(i).getRank() == rank){
+               counter++;
+            }
+
+        }
+        return counter;
+    }
 
     public int findIndexOfRank(ArrayList<Card> hand, Rank rank) {
         int index = 0;
