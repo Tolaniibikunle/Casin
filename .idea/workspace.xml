@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="813ae52b-0ae0-4e6c-90b8-3f90c79536b1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/GoFish$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/BlackJack.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/BlackJack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/CardGame.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/CardGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Casino.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Casino.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Deck.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Deck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/GoFish.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/GoFish.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Player.class" afterPath="$PROJECT_DIR$/target/classes/ibikunle/tolani/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/DeckTEST.class" afterPath="$PROJECT_DIR$/target/test-classes/DeckTEST.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/BlackJack.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/BlackJack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/Card.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/Card.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/CardGame.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/CardGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/Casino.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/Casino.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/Deck.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/Deck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/GoFish.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/GoFish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/java/ibikunle/tolani/Player.java" afterPath="$PROJECT_DIR$/main/java/ibikunle/tolani/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/java/DeckTEST.java" afterPath="$PROJECT_DIR$/test/java/DeckTEST.java" />
-    </list>
+    <list default="true" id="813ae52b-0ae0-4e6c-90b8-3f90c79536b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackJack.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlackJack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/java/ibikunle/tolani/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-10">
@@ -147,10 +129,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeckTEST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeckTEST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/java/DeckTEST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="808">
+            <state relative-caret-position="913">
               <caret line="211" column="54" lean-forward="false" selection-start-line="211" selection-start-column="54" selection-end-line="211" selection-end-column="54" />
               <folding>
                 <element signature="e#6761#6767#0" expanded="true" />
@@ -824,7 +806,7 @@
       <option name="presentableId" value="Default" />
       <updated>1485732571325</updated>
       <workItem from="1485732576921" duration="12010000" />
-      <workItem from="1485794660854" duration="15888000" />
+      <workItem from="1485794660854" duration="16199000" />
     </task>
     <servers />
   </component>
@@ -861,11 +843,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27898000" />
+    <option name="totallyTimeSpent" value="28209000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1280" height="725" extended-state="6" />
-    <editor active="false" />
+    <frame x="-2" y="23" width="1280" height="725" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1128,16 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/java/DeckTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="211" column="54" lean-forward="false" selection-start-line="211" selection-start-column="54" selection-end-line="211" selection-end-column="54" />
-          <folding>
-            <element signature="e#6761#6767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/java/ibikunle/tolani/GoFish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1170,6 +1142,16 @@
             <element signature="e#1893#1894#0" expanded="true" />
             <element signature="e#1926#1927#0" expanded="true" />
             <element signature="e#2407#2413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/java/DeckTEST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="913">
+          <caret line="211" column="54" lean-forward="false" selection-start-line="211" selection-start-column="54" selection-end-line="211" selection-end-column="54" />
+          <folding>
+            <element signature="e#6761#6767#0" expanded="true" />
           </folding>
         </state>
       </provider>
